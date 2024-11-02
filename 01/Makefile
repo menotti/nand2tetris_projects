@@ -56,6 +56,12 @@ or_test: Or_tb.v Or.v Not.v Nand.v
 	@diff --strip-trailing-cr Or.out Or.cmp
 	@echo "--- OR PASS ---"
 
+or8_test: Or8Way_tb.v Or8Way.v 
+	@iverilog -o Or8_test.out Or8Way_tb.v Or8Way.v
+	@vvp Or8_test.out
+	@diff --strip-trailing-cr Or8Way.out Or8Way.cmp
+	@echo "--- OR8 PASS ---"
+
 or16_test: Or16_tb.v Or16.v 
 	@iverilog -o Or16_test.out Or16_tb.v Or16.v
 	@vvp Or16_test.out
@@ -68,7 +74,7 @@ xor_test: Xor_tb.v Xor.v Not.v And.v Or.v Nand.v
 	@diff --strip-trailing-cr Xor.out Xor.cmp
 	@echo "--- XOR PASS ---"
 
-test: and_test and16_test mux_test mux16_test nand_test not_test not16_test or_test or16_test xor_test
+test: and_test and16_test mux_test mux16_test nand_test not_test not16_test or_test or8_test or16_test xor_test
 	@echo ""
 	@echo "--- ALL PASS ---\n"
 
