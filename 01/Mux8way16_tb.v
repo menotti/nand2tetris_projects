@@ -30,8 +30,8 @@ module Mux8way16_tb();
         file = $fopen("Mux8way16.out", "w");
         $fwrite(file, "|   a   |   b   |   c   |   d   |   e   |   f   |   g   |   h   |  sel  |  out  |\n");
 
-        $readmemb("Mux8way16.tv", testvectors);
         reg [0:130] testvectors [15:0];
+        $readmemb("Mux8way16.tv", testvectors);
 
         for(integer i = 0; i < 16; i = i + 1) begin
             a = testvectors[i][0:15];
