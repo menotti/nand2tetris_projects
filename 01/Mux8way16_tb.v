@@ -43,7 +43,7 @@ module Mux8way16_tb();
             g = testvectors[i][96:111];
             h = testvectors[i][112:127];
             sel = testvectors[i][128:130];
-            $display();
+            display();
         end
 
         $finish();
