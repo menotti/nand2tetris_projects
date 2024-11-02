@@ -15,22 +15,23 @@ module Mux8way16_tb();
         .e(e),
         .f(f),
         .g(g),
-        .h(h)
+        .h(h),
+        .sel(sel),
+        .out(out)
     );
 
     task display;
-        #1 $fwrite(file, "|   a   |   b   |   c   |   d   |   e   |   f   |   g   |   h   |  sel  |  out  |\n");
+        #1 $fwrite(file, "|   %1b   |   %1b   |   %1b   |   %1b   |   %1b   |   %1b   |   %1b   |   %1b   |  %1b  |  %1b  |\n");
     endtask
 
     initial begin
-        $dumpfile("Mux_tb.vcd");
-        $dumpvars(0, Mux_tb);
-        file = $fopen("Mux.out", "w");
+        $dumpfile("Mux8way16_tb.vcd");
+        $dumpvars(0, Mux8way16_tb);
+        file = $fopen("Mux8way16.out", "w");
         $fwrite(file, "|   a   |   b   |   c   |   d   |   e   |   f   |   g   |   h   |  sel  |  out  |\n");
 
-
         $readmemb("Mux8way16.tv", testvectors);
-        reg [0:146] testvectors [15:0];
+        reg [0:130] testvectors [15:0];
 
         for(integer i = 0; i < 16; i = i + 1) begin
             a = testvectors[i][0:15];
@@ -42,7 +43,6 @@ module Mux8way16_tb();
             g = testvectors[i][96:111];
             h = testvectors[i][112:127];
             sel = testvectors[i][128:130];
-            out = testvectors[i][131:146];
             $display();
         end
 
