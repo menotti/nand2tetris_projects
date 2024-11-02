@@ -3,5 +3,5 @@ module Not(
     output out
 );
 
-    assign out = ~a;
+    assign out = ~in;
 endmodule
