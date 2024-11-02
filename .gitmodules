@@ -1,0 +1,6 @@
+[submodule "verilog_projects/nand2tetris-verilog"]
+	path = verilog_projects/nand2tetris-verilog
+	url = https://github.com/jopdorp/nand2tetris-verilog
+[submodule "verilog_projects/nand2tetris-iverilog"]
+	path = verilog_projects/nand2tetris-iverilog
+	url = https://github.com/wuhanstudio/nand2tetris-iverilog
