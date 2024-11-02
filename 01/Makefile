@@ -74,6 +74,12 @@ xor_test: Xor_tb.v Xor.v Not.v And.v Or.v Nand.v
 	@diff --strip-trailing-cr Xor.out Xor.cmp
 	@echo "--- XOR PASS ---"
 
+Mux8Way16_test: Mux8Way16_tb.v Mux8Way16.v
+	@iverilog -o Mux8Way16_test.out Mux8Way16_tb.v Mux8Way16.v
+	@vvp Mux8Way16_test.out
+	@diff --strip-trailing-cr Mux8Way16.out Mux8Way16.cmp
+	@echo "-- Mux8Way16 PASS --"
+
 test: and_test and16_test mux_test mux16_test nand_test not_test not16_test or_test or8_test or16_test xor_test
 	@echo ""
 	@echo "--- ALL PASS ---\n"
