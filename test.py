@@ -7,7 +7,7 @@ def get_dirs(path):
             yield dir
 
 def get_files(path):
-    for file in sorted(glob.glob(path + '/*.sv')):
+    for file in sorted(glob.glob(path + '/*.v')):
         if os.path.isfile(os.path.join(file)):
             yield file
 

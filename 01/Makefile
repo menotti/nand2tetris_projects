@@ -1,11 +1,11 @@
-all Xor_test.out: Xor_tb.v Xor.v Or.v Not.v And.v Nand.v
-	iverilog -o Xor_test.out Xor_tb.v Xor.v Or.v Not.v And.v Nand.v
+all test.out: 
+	iverilog -o test.out *.v
 
-run Xor_tb.vcd: Xor_test.out
-	vvp Xor_test.out
+run dump.vcd: test.out
+	vvp test.out
 
-sim: Xor_tb.vcd
-	gtkwave Xor_tb.vcd
+sim: dump.vcd
+	gtkwave dump.vcd
 
 nand_test: Nand_tb.v Nand.v
 	@iverilog -o Nand_test.out Nand_tb.v Nand.v
