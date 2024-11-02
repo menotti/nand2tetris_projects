@@ -21,7 +21,7 @@ module Mux8way16_tb();
     );
 
     task display;
-        #1 $fwrite(file, "|   %1b   |   %1b   |   %1b   |   %1b   |   %1b   |   %1b   |   %1b   |   %1b   |  %1b  |  %1b  |\n");
+        #1 $fwrite(file, "|   %1b   |   %1b   |   %1b   |   %1b   |   %1b   |   %1b   |   %1b   |   %1b   |  %1b  |  %1b  |\n", a, b, c, d, e, f, g, h, sel, out);
     endtask
 
     initial begin
