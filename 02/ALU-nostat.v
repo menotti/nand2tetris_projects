@@ -11,7 +11,7 @@ module ALUnostat(
     assign  outzy = zy ? (16'h0000) : (y);
     assign  outny = ny ? (~outzy) : (outzy);
 
-    assign outf = f ? (outnx + outny) : (outnx && outny);
+    assign outf = f ? (outnx + outny) : (outnx & outny);
 
     assign out = no ? (~outf) : (outf);
 
