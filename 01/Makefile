@@ -104,7 +104,7 @@ Mux4Way16_test: Mux4Way16_tb.v Mux4Way16.v
 	@diff --strip-trailing-cr Mux4Way16.out Mux4Way16.cmp
 	@echo "-- Mux4Way16 PASS --"
 
-test: and_test and16_test mux_test mux16_test nand_test not_test not16_test or_test or8_test or16_test xor_test Mux8Way16_test DMux8Way DMux Mux4Way16
+test: and_test and16_test mux_test mux16_test nand_test not_test not16_test or_test or8_test or16_test xor_test Mux8Way16_test DMux4Way_test DMux8Way_test DMux_test Mux4Way16_test
 	@echo ""
 	@echo "--- ALL PASS ---\n"
 
