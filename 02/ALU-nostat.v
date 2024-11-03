@@ -1,7 +1,7 @@
 module ALUnostat(
     input [15:0] x, y,
     input zx, nx, zy, ny, f, no,
-    output [15:0] out,);
+    output [15:0] out);
 
     wire [15:0] outzx, outnx, outzy, outny, outno;
 

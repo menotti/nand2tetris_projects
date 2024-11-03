@@ -1,0 +1,796 @@
+$date
+	Sun Nov  3 00:17:33 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Inc16_tb $end
+$var wire 16 ! out [15:0] $end
+$var reg 16 " in [15:0] $end
+$var integer 32 # file [31:0] $end
+$scope module dut $end
+$var wire 16 $ in [15:0] $end
+$var wire 16 % val [15:0] $end
+$var wire 16 & out [15:0] $end
+$scope module add16_1 $end
+$var wire 16 ' a [15:0] $end
+$var wire 16 ( b [15:0] $end
+$var wire 16 ) out [15:0] $end
+$var wire 16 * carry [15:0] $end
+$scope module fulladder1 $end
+$var wire 1 + a $end
+$var wire 1 , b $end
+$var wire 1 - carry_in $end
+$var wire 1 . carry_out $end
+$var wire 1 / sum1 $end
+$var wire 1 0 sum $end
+$var wire 2 1 carry [1:0] $end
+$scope module halfadder1 $end
+$var wire 1 + a $end
+$var wire 1 , b $end
+$var wire 1 2 carry $end
+$var wire 1 / sum $end
+$upscope $end
+$scope module halfadder2 $end
+$var wire 1 / a $end
+$var wire 1 - b $end
+$var wire 1 3 carry $end
+$var wire 1 0 sum $end
+$upscope $end
+$upscope $end
+$scope module fulladder10 $end
+$var wire 1 4 a $end
+$var wire 1 5 b $end
+$var wire 1 6 carry_in $end
+$var wire 1 7 carry_out $end
+$var wire 1 8 sum1 $end
+$var wire 1 9 sum $end
+$var wire 2 : carry [1:0] $end
+$scope module halfadder1 $end
+$var wire 1 4 a $end
+$var wire 1 5 b $end
+$var wire 1 ; carry $end
+$var wire 1 8 sum $end
+$upscope $end
+$scope module halfadder2 $end
+$var wire 1 8 a $end
+$var wire 1 6 b $end
+$var wire 1 < carry $end
+$var wire 1 9 sum $end
+$upscope $end
+$upscope $end
+$scope module fulladder11 $end
+$var wire 1 = a $end
+$var wire 1 > b $end
+$var wire 1 ? carry_in $end
+$var wire 1 @ carry_out $end
+$var wire 1 A sum1 $end
+$var wire 1 B sum $end
+$var wire 2 C carry [1:0] $end
+$scope module halfadder1 $end
+$var wire 1 = a $end
+$var wire 1 > b $end
+$var wire 1 D carry $end
+$var wire 1 A sum $end
+$upscope $end
+$scope module halfadder2 $end
+$var wire 1 A a $end
+$var wire 1 ? b $end
+$var wire 1 E carry $end
+$var wire 1 B sum $end
+$upscope $end
+$upscope $end
+$scope module fulladder12 $end
+$var wire 1 F a $end
+$var wire 1 G b $end
+$var wire 1 H carry_in $end
+$var wire 1 I carry_out $end
+$var wire 1 J sum1 $end
+$var wire 1 K sum $end
+$var wire 2 L carry [1:0] $end
+$scope module halfadder1 $end
+$var wire 1 F a $end
+$var wire 1 G b $end
+$var wire 1 M carry $end
+$var wire 1 J sum $end
+$upscope $end
+$scope module halfadder2 $end
+$var wire 1 J a $end
+$var wire 1 H b $end
+$var wire 1 N carry $end
+$var wire 1 K sum $end
+$upscope $end
+$upscope $end
+$scope module fulladder13 $end
+$var wire 1 O a $end
+$var wire 1 P b $end
+$var wire 1 Q carry_in $end
+$var wire 1 R carry_out $end
+$var wire 1 S sum1 $end
+$var wire 1 T sum $end
+$var wire 2 U carry [1:0] $end
+$scope module halfadder1 $end
+$var wire 1 O a $end
+$var wire 1 P b $end
+$var wire 1 V carry $end
+$var wire 1 S sum $end
+$upscope $end
+$scope module halfadder2 $end
+$var wire 1 S a $end
+$var wire 1 Q b $end
+$var wire 1 W carry $end
+$var wire 1 T sum $end
+$upscope $end
+$upscope $end
+$scope module fulladder14 $end
+$var wire 1 X a $end
+$var wire 1 Y b $end
+$var wire 1 Z carry_in $end
+$var wire 1 [ carry_out $end
+$var wire 1 \ sum1 $end
+$var wire 1 ] sum $end
+$var wire 2 ^ carry [1:0] $end
+$scope module halfadder1 $end
+$var wire 1 X a $end
+$var wire 1 Y b $end
+$var wire 1 _ carry $end
+$var wire 1 \ sum $end
+$upscope $end
+$scope module halfadder2 $end
+$var wire 1 \ a $end
+$var wire 1 Z b $end
+$var wire 1 ` carry $end
+$var wire 1 ] sum $end
+$upscope $end
+$upscope $end
+$scope module fulladder15 $end
+$var wire 1 a a $end
+$var wire 1 b b $end
+$var wire 1 c carry_in $end
+$var wire 1 d carry_out $end
+$var wire 1 e sum1 $end
+$var wire 1 f sum $end
+$var wire 2 g carry [1:0] $end
+$scope module halfadder1 $end
+$var wire 1 a a $end
+$var wire 1 b b $end
+$var wire 1 h carry $end
+$var wire 1 e sum $end
+$upscope $end
+$scope module halfadder2 $end
+$var wire 1 e a $end
+$var wire 1 c b $end
+$var wire 1 i carry $end
+$var wire 1 f sum $end
+$upscope $end
+$upscope $end
+$scope module fulladder2 $end
+$var wire 1 j a $end
+$var wire 1 k b $end
+$var wire 1 l carry_in $end
+$var wire 1 m carry_out $end
+$var wire 1 n sum1 $end
+$var wire 1 o sum $end
+$var wire 2 p carry [1:0] $end
+$scope module halfadder1 $end
+$var wire 1 j a $end
+$var wire 1 k b $end
+$var wire 1 q carry $end
+$var wire 1 n sum $end
+$upscope $end
+$scope module halfadder2 $end
+$var wire 1 n a $end
+$var wire 1 l b $end
+$var wire 1 r carry $end
+$var wire 1 o sum $end
+$upscope $end
+$upscope $end
+$scope module fulladder3 $end
+$var wire 1 s a $end
+$var wire 1 t b $end
+$var wire 1 u carry_in $end
+$var wire 1 v carry_out $end
+$var wire 1 w sum1 $end
+$var wire 1 x sum $end
+$var wire 2 y carry [1:0] $end
+$scope module halfadder1 $end
+$var wire 1 s a $end
+$var wire 1 t b $end
+$var wire 1 z carry $end
+$var wire 1 w sum $end
+$upscope $end
+$scope module halfadder2 $end
+$var wire 1 w a $end
+$var wire 1 u b $end
+$var wire 1 { carry $end
+$var wire 1 x sum $end
+$upscope $end
+$upscope $end
+$scope module fulladder4 $end
+$var wire 1 | a $end
+$var wire 1 } b $end
+$var wire 1 ~ carry_in $end
+$var wire 1 !" carry_out $end
+$var wire 1 "" sum1 $end
+$var wire 1 #" sum $end
+$var wire 2 $" carry [1:0] $end
+$scope module halfadder1 $end
+$var wire 1 | a $end
+$var wire 1 } b $end
+$var wire 1 %" carry $end
+$var wire 1 "" sum $end
+$upscope $end
+$scope module halfadder2 $end
+$var wire 1 "" a $end
+$var wire 1 ~ b $end
+$var wire 1 &" carry $end
+$var wire 1 #" sum $end
+$upscope $end
+$upscope $end
+$scope module fulladder5 $end
+$var wire 1 '" a $end
+$var wire 1 (" b $end
+$var wire 1 )" carry_in $end
+$var wire 1 *" carry_out $end
+$var wire 1 +" sum1 $end
+$var wire 1 ," sum $end
+$var wire 2 -" carry [1:0] $end
+$scope module halfadder1 $end
+$var wire 1 '" a $end
+$var wire 1 (" b $end
+$var wire 1 ." carry $end
+$var wire 1 +" sum $end
+$upscope $end
+$scope module halfadder2 $end
+$var wire 1 +" a $end
+$var wire 1 )" b $end
+$var wire 1 /" carry $end
+$var wire 1 ," sum $end
+$upscope $end
+$upscope $end
+$scope module fulladder6 $end
+$var wire 1 0" a $end
+$var wire 1 1" b $end
+$var wire 1 2" carry_in $end
+$var wire 1 3" carry_out $end
+$var wire 1 4" sum1 $end
+$var wire 1 5" sum $end
+$var wire 2 6" carry [1:0] $end
+$scope module halfadder1 $end
+$var wire 1 0" a $end
+$var wire 1 1" b $end
+$var wire 1 7" carry $end
+$var wire 1 4" sum $end
+$upscope $end
+$scope module halfadder2 $end
+$var wire 1 4" a $end
+$var wire 1 2" b $end
+$var wire 1 8" carry $end
+$var wire 1 5" sum $end
+$upscope $end
+$upscope $end
+$scope module fulladder7 $end
+$var wire 1 9" a $end
+$var wire 1 :" b $end
+$var wire 1 ;" carry_in $end
+$var wire 1 <" carry_out $end
+$var wire 1 =" sum1 $end
+$var wire 1 >" sum $end
+$var wire 2 ?" carry [1:0] $end
+$scope module halfadder1 $end
+$var wire 1 9" a $end
+$var wire 1 :" b $end
+$var wire 1 @" carry $end
+$var wire 1 =" sum $end
+$upscope $end
+$scope module halfadder2 $end
+$var wire 1 =" a $end
+$var wire 1 ;" b $end
+$var wire 1 A" carry $end
+$var wire 1 >" sum $end
+$upscope $end
+$upscope $end
+$scope module fulladder8 $end
+$var wire 1 B" a $end
+$var wire 1 C" b $end
+$var wire 1 D" carry_in $end
+$var wire 1 E" carry_out $end
+$var wire 1 F" sum1 $end
+$var wire 1 G" sum $end
+$var wire 2 H" carry [1:0] $end
+$scope module halfadder1 $end
+$var wire 1 B" a $end
+$var wire 1 C" b $end
+$var wire 1 I" carry $end
+$var wire 1 F" sum $end
+$upscope $end
+$scope module halfadder2 $end
+$var wire 1 F" a $end
+$var wire 1 D" b $end
+$var wire 1 J" carry $end
+$var wire 1 G" sum $end
+$upscope $end
+$upscope $end
+$scope module fulladder9 $end
+$var wire 1 K" a $end
+$var wire 1 L" b $end
+$var wire 1 M" carry_in $end
+$var wire 1 N" carry_out $end
+$var wire 1 O" sum1 $end
+$var wire 1 P" sum $end
+$var wire 2 Q" carry [1:0] $end
+$scope module halfadder1 $end
+$var wire 1 K" a $end
+$var wire 1 L" b $end
+$var wire 1 R" carry $end
+$var wire 1 O" sum $end
+$upscope $end
+$scope module halfadder2 $end
+$var wire 1 O" a $end
+$var wire 1 M" b $end
+$var wire 1 S" carry $end
+$var wire 1 P" sum $end
+$upscope $end
+$upscope $end
+$scope module halfadder1 $end
+$var wire 1 T" a $end
+$var wire 1 U" b $end
+$var wire 1 V" carry $end
+$var wire 1 W" sum $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope begin $ivl_for_loop0 $end
+$var integer 32 X" i [31:0] $end
+$upscope $end
+$scope task display $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 X"
+1W"
+0V"
+1U"
+0T"
+0S"
+0R"
+b0 Q"
+0P"
+0O"
+0N"
+0M"
+0L"
+0K"
+0J"
+0I"
+b0 H"
+0G"
+0F"
+0E"
+0D"
+0C"
+0B"
+0A"
+0@"
+b0 ?"
+0>"
+0="
+0<"
+0;"
+0:"
+09"
+08"
+07"
+b0 6"
+05"
+04"
+03"
+02"
+01"
+00"
+0/"
+0."
+b0 -"
+0,"
+0+"
+0*"
+0)"
+0("
+0'"
+0&"
+0%"
+b0 $"
+0#"
+0""
+0!"
+0~
+0}
+0|
+0{
+0z
+b0 y
+0x
+0w
+0v
+0u
+0t
+0s
+0r
+0q
+b0 p
+0o
+0n
+0m
+0l
+0k
+0j
+0i
+0h
+b0 g
+0f
+0e
+0d
+0c
+0b
+0a
+0`
+0_
+b0 ^
+0]
+0\
+0[
+0Z
+0Y
+0X
+0W
+0V
+b0 U
+0T
+0S
+0R
+0Q
+0P
+0O
+0N
+0M
+b0 L
+0K
+0J
+0I
+0H
+0G
+0F
+0E
+0D
+b0 C
+0B
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+b0 :
+09
+08
+07
+06
+05
+04
+03
+02
+b0 1
+00
+0/
+0.
+0-
+0,
+0+
+b0 *
+b1 )
+b1 (
+b0 '
+b1 &
+b1 %
+b0 $
+b10000000000000000000000000000011 #
+b0 "
+b1 !
+$end
+#1
+1d
+b10 g
+1i
+1c
+1[
+b10 ^
+1`
+1Z
+1R
+b10 U
+1W
+1Q
+1I
+b10 L
+1N
+1H
+1@
+b10 C
+1E
+1?
+17
+b10 :
+1<
+16
+1N"
+b10 Q"
+1S"
+1M"
+1E"
+b10 H"
+1J"
+1D"
+1<"
+b10 ?"
+1A"
+1;"
+13"
+b10 6"
+18"
+12"
+1*"
+b10 -"
+1/"
+1)"
+1!"
+b10 $"
+1&"
+1~
+1v
+b10 y
+1{
+1u
+1m
+b10 p
+1r
+1l
+1.
+b10 1
+13
+1-
+00
+0o
+0x
+0#"
+0,"
+05"
+0>"
+0G"
+0P"
+09
+0B
+0K
+0T
+0]
+0f
+b0 !
+b0 &
+b0 )
+0W"
+b1111111111111111 *
+1V"
+1/
+1n
+1w
+1""
+1+"
+14"
+1="
+1F"
+1O"
+18
+1A
+1J
+1S
+1\
+1e
+1T"
+1+
+1j
+1s
+1|
+1'"
+10"
+19"
+1B"
+1K"
+14
+1=
+1F
+1O
+1X
+1a
+b1111111111111111 "
+b1111111111111111 $
+b1111111111111111 '
+b1 X"
+#2
+0u
+0m
+1o
+b0 p
+0r
+0l
+0~
+0)"
+02"
+0;"
+0D"
+0M"
+06
+0?
+0H
+0Q
+0Z
+0c
+0.
+0v
+0!"
+0*"
+03"
+0<"
+0E"
+0N"
+07
+0@
+0I
+0R
+0[
+b1 *
+0d
+10
+b0 1
+03
+0x
+b0 y
+0{
+0#"
+b0 $"
+0&"
+0,"
+b0 -"
+0/"
+05"
+b0 6"
+08"
+0>"
+b0 ?"
+0A"
+0G"
+b0 H"
+0J"
+0P"
+b0 Q"
+0S"
+09
+b0 :
+0<
+0B
+b0 C
+0E
+0K
+b0 L
+0N
+0T
+b0 U
+0W
+0]
+b0 ^
+0`
+b110 !
+b110 &
+b110 )
+0f
+b0 g
+0i
+0/
+0w
+0""
+0+"
+04"
+0="
+0F"
+0O"
+08
+0A
+0J
+0S
+0\
+0e
+0+
+0s
+0|
+0'"
+00"
+09"
+0B"
+0K"
+04
+0=
+0F
+0O
+0X
+0a
+b101 "
+b101 $
+b101 '
+b10 X"
+#3
+1l
+b11 *
+1.
+00
+b10 1
+13
+1o
+1x
+1#"
+1,"
+15"
+1>"
+1G"
+1P"
+19
+1B
+1K
+1T
+1]
+b1111111111111100 !
+b1111111111111100 &
+b1111111111111100 )
+1f
+1/
+0n
+1w
+1""
+1+"
+14"
+1="
+1F"
+1O"
+18
+1A
+1J
+1S
+1\
+1e
+1+
+0j
+1s
+1|
+1'"
+10"
+19"
+1B"
+1K"
+14
+1=
+1F
+1O
+1X
+1a
+b1111111111111011 "
+b1111111111111011 $
+b1111111111111011 '
+b11 X"
+#4
+b100 X"

@@ -32,7 +32,19 @@ HalfAdder_test: HalfAdder_tb.v HalfAdder.v
 	@diff --strip-trailing-cr HalfAdder.out HalfAdder.cmp
 	@echo "--- HalfAdder PASS ---"
 
-test: Inc16_test Add16_test FullAdder_test HalfAdder_test
+ALU_test: ALU_tb.v ALU.v 
+	@iverilog -o ALU_test.out ALU_tb.v ALU.v
+	@vvp ALU_test.out
+	@diff --strip-trailing-cr ALU.out ALU.cmp
+	@echo "--- ALU PASS ---"
+
+ALU-nostat_test: ALU-nostat_tb.v ALU-nostat.v 
+	@iverilog -o ALU-nostat_test.out ALU-nostat_tb.v ALU-nostat.v
+	@vvp ALU-nostat_test.out
+	@diff --strip-trailing-cr ALU-nostat.out ALU-nostat.cmp
+	@echo "--- ALU-nostat PASS ---"
+
+test: Inc16_test Add16_test FullAdder_test HalfAdder_test ALU_test ALU-nostat_test
 	@echo ""
 	@echo "--- ALL PASS ---\n"
 

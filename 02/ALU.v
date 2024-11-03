@@ -16,7 +16,7 @@ module ALU(
 
     assign outno = no ? (~out) : (out);
 
-    assign zr = (outno = 16'h0000) ? 1 : 0;
-    assign ng = (outno[15] = 1) ? 1 : 0;
+    assign zr = (outno == 16'h0000) ? 1 : 0;
+    assign ng = (outno[15] == 1) ? 1 : 0;
 
 endmodule

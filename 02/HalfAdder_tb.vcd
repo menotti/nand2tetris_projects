@@ -1,0 +1,55 @@
+$date
+	Sun Nov  3 00:17:33 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module HalfAdder_tb $end
+$var wire 1 ! sum $end
+$var wire 1 " carry $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$var integer 32 % file [31:0] $end
+$scope module dut $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 " carry $end
+$var wire 1 ! sum $end
+$upscope $end
+$scope begin $ivl_for_loop0 $end
+$var integer 32 & i [31:0] $end
+$upscope $end
+$scope task display $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 &
+b10000000000000000000000000000011 %
+0$
+0#
+0"
+0!
+$end
+#1
+1!
+1$
+b1 &
+#2
+0$
+1#
+b10 &
+#3
+0!
+1"
+1$
+b11 &
+#4
+b100 &
