@@ -26,7 +26,13 @@ FullAdder_test: FullAdder_tb.v FullAdder.v HalfAdder.v
 	@diff --strip-trailing-cr FullAdder.out FullAdder.cmp
 	@echo "--- FullAdder PASS ---"
 
-test: Inc16_test Add16_test FullAdder_test
+HalfAdder_test: HalfAdder_tb.v HalfAdder.v 
+	@iverilog -o HalfAdder_test.out HalfAdder_tb.v HalfAdder.v
+	@vvp HalfAdder_test.out
+	@diff --strip-trailing-cr HalfAdder.out HalfAdder.cmp
+	@echo "--- HalfAdder PASS ---"
+
+test: Inc16_test Add16_test FullAdder_test HalfAdder_test
 	@echo ""
 	@echo "--- ALL PASS ---\n"
 
