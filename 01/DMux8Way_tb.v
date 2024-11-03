@@ -1,7 +1,7 @@
 `default_nettype none
 module DMux8Way_tb();
     
-    integer file;
+    integer file, i;
 
     reg in;
     reg [2:0] sel;
@@ -34,10 +34,10 @@ module DMux8Way_tb();
 
         $readmemb("DMux8Way.tv", testvectors, 0, 15);
 
-        for(integer i = 0; i < 16; i = i + 1) begin
-		in = testvectors[i][11];
-		sel = testvectors[i][10:8];
-		display();
+        for (i = 0; i < 16; i = i + 1) begin
+            in = testvectors[i][11];
+            sel = testvectors[i][10:8];
+            display();
         end
 
         $finish();

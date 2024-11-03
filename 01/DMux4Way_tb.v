@@ -1,7 +1,7 @@
 `default_nettype none
 module DMux4Way_tb();
     
-    integer file;
+    integer file, i;
 
     reg in;
     reg [1:0] sel;
@@ -30,10 +30,10 @@ module DMux4Way_tb();
 
         $readmemb("DMux4Way.tv", testvectors, 0, 7);
 
-        for(integer i = 0; i < 8; i = i + 1) begin
-		in = testvectors[i][6];
-		sel = testvectors[i][5:4];
-		display();
+        for (i = 0; i < 8; i = i + 1) begin
+            in = testvectors[i][6];
+            sel = testvectors[i][5:4];
+            display();
         end
 
         $finish();

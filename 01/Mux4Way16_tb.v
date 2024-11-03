@@ -1,7 +1,7 @@
 `default_nettype none
 module Mux4Way16_tb();
     
-    integer file;
+    integer file, i;
     
     reg [15:0] a, b, c, d;
     reg [1:0] sel;
@@ -30,13 +30,13 @@ module Mux4Way16_tb();
 
         $readmemb("Mux4Way16.tv", testvectors, 0, 7);
 
-        for(integer i = 0; i < 8; i = i + 1) begin
-		a = testvectors[i][81:66];
-		b = testvectors[i][65:50];			
-		c = testvectors[i][49:34];
-		d = testvectors[i][33:18];
-		sel = testvectors[i][17:16];
-		display();
+        for (i = 0; i < 8; i = i + 1) begin
+            a = testvectors[i][81:66];
+            b = testvectors[i][65:50];			
+            c = testvectors[i][49:34];
+            d = testvectors[i][33:18];
+            sel = testvectors[i][17:16];
+            display();
         end
 
         $finish();

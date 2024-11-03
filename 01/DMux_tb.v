@@ -1,7 +1,7 @@
 `default_nettype none
 module DMux_tb();
     
-    integer file;
+    integer file, i;
 
     reg in, sel;
     wire a, b;
@@ -27,10 +27,10 @@ module DMux_tb();
 
         $readmemb("DMux.tv", testvectors, 0, 3);
 
-        for(integer i = 0; i < 4; i = i + 1) begin
-		in = testvectors[i][3];
-		sel = testvectors[i][2];
-		display();
+        for(i = 0; i < 4; i = i + 1) begin
+            in = testvectors[i][3];
+            sel = testvectors[i][2];
+            display();
         end
 
         $finish();
