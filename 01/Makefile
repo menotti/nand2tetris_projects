@@ -86,7 +86,19 @@ DMux4Way: DMux4Way_tb.v DMux4Way.v
 	@diff --strip-trailing-cr DMux4Way.out DMux4Way.cmp
 	@echo "-- DMux4Way PASS --"
 
-test: and_test and16_test mux_test mux16_test nand_test not_test not16_test or_test or8_test or16_test xor_test Mux8Way16_test
+DMux8Way: DMux8Way_tb.v DMux8Way.v
+	@iverilog -o DMux8Way_test.out DMux8Way_tb.v DMux8Way.v
+	@vvp DMux8Way_test.out
+	@diff --strip-trailing-cr DMux8Way.out DMux8Way.cmp
+	@echo "-- DMux8Way PASS --"
+
+DMux: DMux_tb.v DMux.v
+	@iverilog -o DMux_test.out DMux_tb.v DMux.v
+	@vvp DMux_test.out
+	@diff --strip-trailing-cr DMux.out DMux.cmp
+	@echo "-- DMux PASS --"
+
+test: and_test and16_test mux_test mux16_test nand_test not_test not16_test or_test or8_test or16_test xor_test Mux8Way16_test DMux8Way DMux
 	@echo ""
 	@echo "--- ALL PASS ---\n"
 
