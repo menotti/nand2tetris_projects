@@ -3,7 +3,7 @@ module ALUnostat(
     input zx, nx, zy, ny, f, no,
     output [15:0] out);
 
-    wire [15:0] outzx, outnx, outzy, outny, outno;
+    wire [15:0] outzx, outnx, outzy, outny, outf;
 
     assign  outzx = zx ? (16'h0000) : (x);
     assign  outnx = nx ? (~outzx) : (outzx);
@@ -11,8 +11,8 @@ module ALUnostat(
     assign  outzy = zy ? (16'h0000) : (y);
     assign  outny = ny ? (~outzy) : (outzy);
 
-    assign out = f ? (outnx + outny) : (outnx && outny);
+    assign outf = f ? (outnx + outny) : (outnx && outny);
 
-    assign outno = no ? (~out) : (out);
+    assign out = no ? (~outf) : (outf);
 
 endmodule
