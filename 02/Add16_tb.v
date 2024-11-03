@@ -1,7 +1,7 @@
 `default_nettype none
 module Add16_tb();
     
-    integer file;
+    integer file, i;
 
     reg [15:0] a, b;
     wire [15:0] out;    
@@ -25,10 +25,10 @@ module Add16_tb();
 
         $readmemb("Add16.tv", testvectors, 0, 5);
 
-        for(integer i = 0; i < 6; i = i + 1) begin
-		a = testvectors[i][47:32];
-		b = testvectors[i][31:16];
-		display();
+        for (i = 0; i < 6; i = i + 1) begin
+            a = testvectors[i][47:32];
+            b = testvectors[i][31:16];
+            display();
         end
 
         $finish();

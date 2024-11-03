@@ -1,7 +1,7 @@
 `default_nettype none
 module HalfAdder_tb();
     
-    integer file;
+    integer file, i;
 
     reg a, b;
     wire sum, carry;
@@ -27,10 +27,10 @@ module HalfAdder_tb();
 
         $readmemb("HalfAdder.tv", testvectors, 0, 3);
 
-        for(integer i = 0; i < 4; i = i + 1) begin
-		a = testvectors[i][3];
-		b = testvectors[i][2];
-		display();
+        for (i = 0; i < 4; i = i + 1) begin
+            a = testvectors[i][3];
+            b = testvectors[i][2];
+            display();
         end
 
         $finish();

@@ -1,7 +1,7 @@
 `default_nettype none
 module Inc16_tb();
     
-    integer file;
+    integer file, i;
 
     reg [15:0] in;
     wire [15:0] out; 
@@ -25,9 +25,9 @@ module Inc16_tb();
 
         $readmemb("Inc16.tv", testvectors, 0, 3);
 
-        for(integer i = 0; i < 4; i = i + 1) begin
-		in = testvectors[i][31:16];
-		display();
+        for (i = 0; i < 4; i = i + 1) begin
+            in = testvectors[i][31:16];
+            display();
         end
 
         $finish();

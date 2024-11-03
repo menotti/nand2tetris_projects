@@ -1,7 +1,7 @@
 `default_nettype none
 module FullAdder_tb();
     
-    integer file;
+    integer file, i;
 
     reg a, b, carry_in;
     wire sum, carry_out;
@@ -28,11 +28,11 @@ module FullAdder_tb();
 
         $readmemb("FullAdder.tv", testvectors, 0, 7);
 
-        for(integer i = 0; i < 8; i = i + 1) begin
-		a = testvectors[i][4];
-		b = testvectors[i][3];
-		carry_in = testvectors[i][2];
-	display();
+        for (i = 0; i < 8; i = i + 1) begin
+            a = testvectors[i][4];
+            b = testvectors[i][3];
+            carry_in = testvectors[i][2];
+            display();
         end
 
         $finish();

@@ -1,7 +1,7 @@
 `default_nettype none
 module ALU_tb();
     
-    integer file;
+    integer file, i;
 
     reg [15:0] x, y;
     reg zx, nx, zy, ny, f, no;
@@ -34,19 +34,18 @@ module ALU_tb();
         file = $fopen("ALU.out","w");
         $fwrite(file, "|        x         |        y         |zx |nx |zy |ny | f |no |       out        |zr |ng |\n");
 
-
         $readmemb("ALU.tv", testvectors, 0, 35);
 
-        for(integer i = 0; i < 36; i = i + 1) begin
-		x = testvectors[i][55:40];
-		y = testvectors[i][39:24];
-		zx = testvectors[i][23];
-		nx = testvectors[i][22];
-		zy = testvectors[i][21];
-		ny = testvectors[i][20];
-		f = testvectors[i][19];
-		no = testvectors[i][18];
-		display();
+        for (i = 0; i < 36; i = i + 1) begin
+            x = testvectors[i][55:40];
+            y = testvectors[i][39:24];
+            zx = testvectors[i][23];
+            nx = testvectors[i][22];
+            zy = testvectors[i][21];
+            ny = testvectors[i][20];
+            f = testvectors[i][19];
+            no = testvectors[i][18];
+            display();
         end
 
         $finish();

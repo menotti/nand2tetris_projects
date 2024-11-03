@@ -1,7 +1,7 @@
 `default_nettype none
 module ALUnostat_tb();
     
-    integer file;
+    integer file, i;
 
     reg [15:0] x, y;
     reg zx, nx, zy, ny, f, no;
@@ -33,16 +33,16 @@ module ALUnostat_tb();
 
         $readmemb("ALU-nostat.tv", testvectors, 0, 35);
 
-        for(integer i = 0; i < 36; i = i + 1) begin
-		x = testvectors[i][53:38];
-		y = testvectors[i][37:22];
-		zx = testvectors[i][21];
-		nx = testvectors[i][20];
-		zy = testvectors[i][19];
-		ny = testvectors[i][18];
-		f = testvectors[i][17];
-		no = testvectors[i][16];
-		display();
+        for (i = 0; i < 36; i = i + 1) begin
+            x = testvectors[i][53:38];
+            y = testvectors[i][37:22];
+            zx = testvectors[i][21];
+            nx = testvectors[i][20];
+            zy = testvectors[i][19];
+            ny = testvectors[i][18];
+            f = testvectors[i][17];
+            no = testvectors[i][16];
+            display();
         end
 
         $finish();
