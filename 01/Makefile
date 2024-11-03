@@ -80,25 +80,25 @@ Mux8Way16_test: Mux8Way16_tb.v Mux8Way16.v
 	@diff --strip-trailing-cr Mux8Way16.out Mux8Way16.cmp
 	@echo "-- Mux8Way16 PASS --"
 
-DMux4Way: DMux4Way_tb.v DMux4Way.v
+DMux4Way_test: DMux4Way_tb.v DMux4Way.v
 	@iverilog -o DMux4Way_test.out DMux4Way_tb.v DMux4Way.v
 	@vvp DMux4Way_test.out
 	@diff --strip-trailing-cr DMux4Way.out DMux4Way.cmp
 	@echo "-- DMux4Way PASS --"
 
-DMux8Way: DMux8Way_tb.v DMux8Way.v
+DMux8Way_test: DMux8Way_tb.v DMux8Way.v
 	@iverilog -o DMux8Way_test.out DMux8Way_tb.v DMux8Way.v
 	@vvp DMux8Way_test.out
 	@diff --strip-trailing-cr DMux8Way.out DMux8Way.cmp
 	@echo "-- DMux8Way PASS --"
 
-DMux: DMux_tb.v DMux.v
+DMux_test: DMux_tb.v DMux.v
 	@iverilog -o DMux_test.out DMux_tb.v DMux.v
 	@vvp DMux_test.out
 	@diff --strip-trailing-cr DMux.out DMux.cmp
 	@echo "-- DMux PASS --"
 
-Mux4Way16: Mux4Way16_tb.v Mux4Way16.v
+Mux4Way16_test: Mux4Way16_tb.v Mux4Way16.v
 	@iverilog -o Mux4Way16_test.out Mux4Way16_tb.v Mux4Way16.v
 	@vvp Mux4Way16_test.out
 	@diff --strip-trailing-cr Mux4Way16.out Mux4Way16.cmp
