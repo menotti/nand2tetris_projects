@@ -10,6 +10,8 @@ module RAM8_tb();
     reg load;
     reg [2:0] address;
     wire signed [15:0] out;
+    reg reset;
+
 
     reg [79:0] testvectors [0:171];
 
@@ -18,6 +20,7 @@ module RAM8_tb();
 	    .load(load),
 	    .address(address),
 	    .clk(clk),
+	    .reset(reset),
 	    .out(out)
     );
 
@@ -31,6 +34,7 @@ module RAM8_tb();
         file = $fopen("RAM8.out","w");
         $readmemh("RAM8.tv", testvectors);
 
+	reset = 0; #1 reset = 1; #1 reset = 0;
 
 	for(i = 0; i < 172; i = i + 1) begin
 		clk = testvectors[i][64];
