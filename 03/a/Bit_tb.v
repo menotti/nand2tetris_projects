@@ -18,6 +18,9 @@ module Bit_tb();
     );
 
     task display;
+        in    = testvectors[vectornum][2];
+        load  = testvectors[vectornum][1];
+        vectornum = vectornum + 1;
         $sformat(stime, "%0d%s", vectornum>>1, tick_tock);
         $fwrite(file, "| %-4s |  %1b  |  %1b  |  %1b  |\n", stime, in, load, out);
     endtask
@@ -32,10 +35,7 @@ module Bit_tb();
     end
 
     always @(posedge clk) begin
-        in    = testvectors[vectornum][2];
-        load  = testvectors[vectornum][1];
         tick_tock = " ";
-        vectornum = vectornum + 1;
         display();
         if (testvectors[vectornum][0] === 1'bx)
             $finish;
@@ -44,10 +44,7 @@ module Bit_tb();
     end
 
     always @(negedge clk) begin
-        in    = testvectors[vectornum][2];
-        load  = testvectors[vectornum][1];
         tick_tock = "+";
-        vectornum = vectornum + 1;
         display();
     end
 

@@ -19,6 +19,9 @@ module Register_tb();
     );
 
     task display;
+        in    = testvectors[vectornum][47:32];
+        load  = testvectors[vectornum][16];
+        vectornum = vectornum + 1;
         $sformat(stime, "%0d%s", vectornum>>1, tick_tock);
         $fwrite(file, "| %-4s | %6d |  %1b  | %6d |\n", stime, in, load, out);
     endtask
@@ -33,10 +36,7 @@ module Register_tb();
     end
 
     always @(posedge clk) begin
-        in    = testvectors[vectornum][47:32];
-        load  = testvectors[vectornum][16];
         tick_tock = " ";
-        vectornum = vectornum + 1;
         display();
         if (testvectors[vectornum][0] === 1'bx)
             $finish;
@@ -45,10 +45,7 @@ module Register_tb();
     end
 
     always @(negedge clk) begin
-        in    = testvectors[vectornum][47:32];
-        load  = testvectors[vectornum][16];
         tick_tock = "+";
-        vectornum = vectornum + 1;
         display();
     end
 
