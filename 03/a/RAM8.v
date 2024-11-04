@@ -1,4 +1,4 @@
-module RAM8(input clk, load
+module RAM8(input clk, load,
 	    input [15:0] in,
 	    input [2:0] address, 
 	    output [15:0] out);

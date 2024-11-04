@@ -16,11 +16,10 @@ module RAM8_tb();
     reg [79:0] testvectors [0:171];
 
     RAM8 dut(
-	    .in(in),
+	    .clk(),
 	    .load(load),
+	    .in(in),
 	    .address(address),
-	    .clk(clk),
-	    .reset(reset),
 	    .out(out)
     );
 
@@ -38,7 +37,6 @@ module RAM8_tb();
 
 	for(i = 0; i < 172; i = i + 1) begin
 		clk = testvectors[i][64];
-		#1
 		in    = testvectors[i][63:48];
 		load  = testvectors[i][32];
 		address = testvectors[i][18:16];
