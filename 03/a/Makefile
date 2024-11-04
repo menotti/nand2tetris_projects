@@ -25,10 +25,10 @@ PC_test: PC_tb.v PC.v
 	@diff --strip-trailing-cr PC.out PC.cmp
 	@echo "--- PC PASS ---"
 
-RAM8_test: RAM8_tb.v RAM8.v 
+RAM8_test: RAM8_tb.v RAM8.v RAM8.tv 
 	@iverilog -g2012 -o RAM8_test.out RAM8_tb.v RAM8.v
 	@vvp RAM8_test.out
-	@diff --strip-trailing-cr RAM8.out RAM8.cmp
+	@diff --strip-trailing-cr RAM8.out RAM8.tv
 	@echo "--- RAM8 PASS ---"
 
 

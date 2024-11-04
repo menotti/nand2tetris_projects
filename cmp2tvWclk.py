@@ -29,10 +29,10 @@ def convert_to_hex(file_path, output_path):
                     value = int(field.strip())
                     if value < 0:
                         # Converte para complemento de 2 em 16 bits para números negativos
-                        hex_value = format(max_value + value, '04X')
+                        hex_value = format(max_value + value, '04x')
                     else:
                         # Converte para hexadecimal em 16 bits com zeros à esquerda para números positivos
-                        hex_value = format(value, '04X')
+                        hex_value = format(value, '04x')
                     hex_values.append(hex_value)
                 except ValueError:
                     # Mantém o campo caso não seja um número
