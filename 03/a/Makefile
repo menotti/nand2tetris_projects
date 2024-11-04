@@ -25,7 +25,14 @@ PC_test: PC_tb.v PC.v
 	@diff --strip-trailing-cr PC.out PC.cmp
 	@echo "--- PC PASS ---"
 
-test: Bit_test Register_test PC_test
+RAM8_test: RAM8_tb.v RAM8.v 
+	@iverilog -g2012 -o RAM8_test.out RAM8_tb.v RAM8.v
+	@vvp RAM8_test.out
+	@diff --strip-trailing-cr RAM8.out RAM8.cmp
+	@echo "--- RAM8 PASS ---"
+
+
+test: Bit_test Register_test PC_test RAM8_test
 	@echo ""
 	@echo "--- ALL PASS ---\n"
 
@@ -34,3 +41,6 @@ clean:
 
 cmp2tv: ../../cmp2tv.py
 	@python3 ../../cmp2tv.py $(FILE)
+
+cmp2tvWclk: ../../cmp2tvWclk.py
+	@python3 ../../cmp2tvWclk.py $(FILE)
