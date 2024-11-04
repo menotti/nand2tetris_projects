@@ -31,3 +31,6 @@ test: Bit_test Register_test PC_test
 
 clean:
 	rm -f *.vcd *.out
+
+cmp2tv: ../../cmp2tv.py
+	@python3 ../../cmp2tv.py $(FILE)
