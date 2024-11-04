@@ -1,3 +1,5 @@
+import sys
+
 def convert_to_hex(file_path, output_path):
     # Usando 16 bits para todos os números
     bits = 16  
@@ -33,8 +35,10 @@ def convert_to_hex(file_path, output_path):
             output_file.write('_'.join(hex_values) + '\n')
 
 # Caminho para o arquivo de entrada e saída
-input_file = '03/a/PC.cmp'
-output_file = '03/a/PC.tv'
+input_file = sys.argv[1]
+output_file = sys.argv[1].replace(".cmp", ".tv")
+
+
 
 # Chama a função de conversão e exibe uma mensagem ao final
 convert_to_hex(input_file, output_file)
