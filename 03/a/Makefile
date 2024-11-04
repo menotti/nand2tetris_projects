@@ -19,7 +19,13 @@ Register_test: Register_tb.v Register.v
 	@diff --strip-trailing-cr Register.out Register.cmp
 	@echo "--- Register PASS ---"
 
-test: Bit_test Register_test
+PC_test: PC_tb.v PC.v 
+	@iverilog -g2012 -o PC_test.out PC_tb.v PC.v
+	@vvp PC_test.out
+	@diff --strip-trailing-cr PC.out PC.cmp
+	@echo "--- PC PASS ---"
+
+test: Bit_test Register_test PC_test
 	@echo ""
 	@echo "--- ALL PASS ---\n"
 
