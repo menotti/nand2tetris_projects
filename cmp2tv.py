@@ -33,8 +33,8 @@ def convert_to_hex(file_path, output_path):
             output_file.write('_'.join(hex_values) + '\n')
 
 # Caminho para o arquivo de entrada e saída
-input_file = '03/a/PC.cmp'
-output_file = '03/a/PC.tv'
+input_file = '03/a/Register.cmp'
+output_file = '03/a/Register.tv'
 
 # Chama a função de conversão e exibe uma mensagem ao final
 convert_to_hex(input_file, output_file)

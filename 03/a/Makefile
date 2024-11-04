@@ -13,7 +13,13 @@ Bit_test: Bit_tb.v Bit.v
 	@diff --strip-trailing-cr Bit.out Bit.cmp
 	@echo "--- Bit PASS ---"
 
-test: Bit_test
+Register_test: Register_tb.v Register.v 
+	@iverilog -g2012 -o Register_test.out Register_tb.v Register.v
+	@vvp Register_test.out
+	@diff --strip-trailing-cr Register.out Register.cmp
+	@echo "--- Register PASS ---"
+
+test: Bit_test Register_test
 	@echo ""
 	@echo "--- ALL PASS ---\n"
 
