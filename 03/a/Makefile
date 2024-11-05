@@ -25,8 +25,8 @@ PC_test: PC_tb.v PC.v
 	@diff --strip-trailing-cr PC.out PC.cmp
 	@echo "--- PC PASS ---"
 
-RAM8_test: RAM8_tb.v RAM8.v RAM8.tv Register.v ../../01/Mux8Way16.v 
-	@iverilog -g2012 -o RAM8_test.out RAM8_tb.v RAM8.v Register.v ../../01/Mux8Way16.v
+RAM8_test: RAM8_tb.v RAM8.v RAM8.tv Register.v ../../01/Mux8Way16.v ../../01/DMux8Way.v 
+	@iverilog -g2012 -o RAM8_test.out RAM8_tb.v RAM8.v Register.v ../../01/Mux8Way16.v ../../01/DMux8Way.v
 	@vvp RAM8_test.out
 	@diff --strip-trailing-cr RAM8.out RAM8.tv
 	@echo "--- RAM8 PASS ---"
