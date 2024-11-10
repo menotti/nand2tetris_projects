@@ -1,4 +1,4 @@
-SRC = RAM512.v RAM512_tb.v ../a/RAM64.v ../a/RAM8.v ../a/Bit.v ../a/Register.v ../../01/DMux8Way.v ../../01/Mux8Way16.v
+SRC = RAM512.v RAM512_tb.v ../a/RAM64.v ../a/RAM8.v ../a/Bit.v ../a/Register.v ../../01/DMux8Way.v ../../01/Mux8Way16.v ../a/RegisterRAM8.v
 all test.out: 
 	iverilog -g2012 -o test.out *.v
 
