@@ -40,7 +40,7 @@ RAM64_test: RAM64_tb.v RAM64.v RAM64.cmp RAM8.v RegisterRAM8.v
 
 
 
-test: Bit_test Register_test PC_test RAM8_test
+test: Bit_test Register_test PC_test RAM8_test RAM64_test
 	@echo ""
 	@echo "--- ALL PASS ---\n"
 
