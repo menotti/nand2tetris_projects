@@ -1,3 +1,4 @@
+SRC = ../../01/Mux8Way16.v ../../01/DMux8Way.v 
 all test.out: 
 	iverilog -g2012 -o test.out *.v
 
@@ -25,11 +26,18 @@ PC_test: PC_tb.v PC.v
 	@diff --strip-trailing-cr PC.out PC.cmp
 	@echo "--- PC PASS ---"
 
-RAM8_test: RAM8_tb.v RAM8.v RAM8.cmp RegisterRAM8.v ../../01/Mux8Way16.v ../../01/DMux8Way.v 
-	@iverilog -g2012 -o RAM8_test.out RAM8_tb.v RAM8.v RegisterRAM8.v ../../01/Mux8Way16.v ../../01/DMux8Way.v
+RAM8_test: RAM8_tb.v RAM8.v RAM8.cmp RegisterRAM8.v $(SRC)
+	@iverilog -g2012 -o RAM8_test.out RAM8_tb.v RAM8.v RegisterRAM8.v $(SRC) 
 	@vvp RAM8_test.out
 	@diff --strip-trailing-cr RAM8.out RAM8.cmp
 	@echo "--- RAM8 PASS ---"
+
+RAM64_test: RAM64_tb.v RAM64.v RAM64.cmp RAM8.v RegisterRAM8.v
+	@iverilog -g2012 -o RAM64_test.out RAM64_tb.v RAM64.v RAM8.v RegisterRAM8.v $(SRC)
+	@vvp RAM64_test.out
+	@diff --strip-trailing-cr RAM64.out RAM64.cmp
+	@echo "--- RAM64 PASS ---"
+
 
 
 test: Bit_test Register_test PC_test RAM8_test
