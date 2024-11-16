@@ -37,13 +37,14 @@ module top(
 
     // rom stores hack code
     ROM ROM_0(
+        .clk(CLOCK_50),
         .address(pc),
         .data(instruction)
     );
 
     // mem gives access to ram and io    
     Memory Memory_0(
-        .clk(~CLOCK_50),
+        .clk(CLOCK_50),
         .address(addressM),
         .dataR(inM),
         .dataW(outM),

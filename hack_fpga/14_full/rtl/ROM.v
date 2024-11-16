@@ -8,16 +8,16 @@
  */
 
 module ROM(
+    input  wire clk,
     input  wire [15:0] address,
-    output wire [15:0] data        
+    output reg  [15:0] data        
 );
 
-    // ROM file of hack
-    parameter ROMFILE = "./blinky.hack";
+    initial 
+        $readmemb("blinky.hack", regROM);
     
     reg [15:0] regROM [0:1023];
-    assign data = regROM[address];
-    initial 
-        $readmemb(ROMFILE, regROM);
 
+    always @(posedge clk)
+        data <= regROM[address];
 endmodule
