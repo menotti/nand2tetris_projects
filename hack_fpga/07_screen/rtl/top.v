@@ -11,19 +11,26 @@ module top #(parameter VGA_BITS = 8) (
 	
   wire [ 9:0] CounterX, CounterY;
   wire [15:0] vaddr;
-  wire [23:0] vdata, background, video;
+  wire [23:0] vdata, background, video, hackscreen, overlay;
   assign background = 24'hF5F5DC; // Beige
+  assign hackscreen = 24'h000000; // Black
   
   wire vga_DA; 	 
   vga #(VGA_BITS) vs(VGA_CLK, VGA_HS, VGA_VS, vga_DA, CounterX, CounterY);
   assign vaddr = (CounterX-112) + (CounterY-316) * 415;
   Nand2Tetris n2t(VGA_CLK, vaddr, vdata);
 
-  assign video = CounterX <     112 ? background : 
-                 CounterX > 415+112 ? background : 
-                 CounterY < 256+ 60 ? background :
-                 CounterY > 256+204 ? background : 
-                 vdata;
+  assign overlay = CounterX <     112 ? background : 
+                   CounterX > 415+112 ? background : 
+                   CounterY < 256+ 60 ? background :
+                   CounterY > 256+204 ? background : 
+                   vdata;
+
+  assign  video = CounterX <     64 ? overlay :
+                  CounterX > 512+64 ? overlay :
+                  CounterY <     40 ? overlay :
+                  CounterY > 256+40 ? overlay :
+                  hackscreen;
     
   assign VGA_R = vga_DA ? video[23:23-VGA_BITS+1] : {VGA_BITS{1'b0}};
   assign VGA_G = vga_DA ? video[15:15-VGA_BITS+1] : {VGA_BITS{1'b0}};
