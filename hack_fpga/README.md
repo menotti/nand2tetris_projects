@@ -36,7 +36,19 @@ Veja um exemplo a seguir:
 ├── Makefile
 └── README.md (este arquivo)
 ```
-Como o Makefile fica na pasta anterior, os comandos para usá-lo devem ser sempre `make -f ..\Makefile` dentro das pastas dos projetos. 
+Como o Makefile fica na pasta anterior, os comandos para usá-lo devem ser sempre `make -f ../Makefile` dentro das pastas dos projetos quando quiser usar o Quartus II.
+
+Se deseja usar o `iverilog` para simular o projeto, entre na pasta `rtl` e use `make -f ../../Makefile sim`. 
+
+## Memória RAM e I/O mapeado em memória
+
+A memória RAM do sistema é composta pelas seguintes partes, todas elas com 16 bits cada:
+
+    0x0000-0x3FFF: RAM       (16K words = 32KB)
+    0x4000-0x5FFF: Screen     (8k words = 16KB)
+    0x6000       : Keyboard   (single register)
+
+O computador possui uma memória ROM de 32K words (64KB) para armazenar os programas (Harvard).
 
 ## Sinal VGA e formatos de imagens
 

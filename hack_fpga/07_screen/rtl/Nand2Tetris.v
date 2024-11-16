@@ -1,11 +1,10 @@
-module rom(
-  input [15:0] vaddr,
-  output[23:0] vdata);
-  
-  reg [23:0] ROM [0:59759];
-  
+module Nand2Tetris(
+  input clock,
+  input [15:0] addr,
+  output reg [23:0] data);
+  reg [23:0] rom [0:59759];
   initial
-    $readmemh("Nand2Tetris.hex", ROM);
-
-  assign vdata = ROM[vaddr];
+    $readmemh("Nand2Tetris.hex", rom);
+  always @(posedge clock)
+    data <= rom[addr];
 endmodule

@@ -9,23 +9,25 @@ module top #(parameter VGA_BITS = 8) (
   always@(posedge CLOCK_50)
     VGA_CLK = ~VGA_CLK; // 25MHz
 	
-  wire [ 7:0] vdata;
+  wire [ 9:0] CounterX, CounterY;
   wire [15:0] vaddr;
-  wire [23:0] color, gray, image, fill, zero;
-  
-  assign zero = 24'b0;
+  wire [23:0] vdata, background, video;
+  assign background = 24'hF5F5DC; // Beige
   
   wire vga_DA; 	 
-  vga #(VGA_BITS) video(VGA_CLK, vaddr, VGA_HS, VGA_VS, vga_DA);
-  Nand2Tetris n2t(vaddr, vdata);
-  
-  assign color = {vdata[5:4], fill[17:12], vdata[3:2], fill[11:6], vdata[1:0], fill[5:0]};
-  
-  assign image = SW[0] ? color : gray;
-  
-  assign VGA_R = vga_DA ? image[23:23-VGA_BITS+1] : {VGA_BITS{1'b0}};
-  assign VGA_G = vga_DA ? image[15:15-VGA_BITS+1] : {VGA_BITS{1'b0}};
-  assign VGA_B = vga_DA ? image[07:07-VGA_BITS+1] : {VGA_BITS{1'b0}};
+  vga #(VGA_BITS) vs(VGA_CLK, VGA_HS, VGA_VS, vga_DA, CounterX, CounterY);
+  assign vaddr = (CounterX-112) + (CounterY-316) * 415;
+  Nand2Tetris n2t(VGA_CLK, vaddr, vdata);
+
+  assign video = CounterX <     112 ? background : 
+                 CounterX > 415+112 ? background : 
+                 CounterY < 256+ 60 ? background :
+                 CounterY > 256+204 ? background : 
+                 vdata;
+    
+  assign VGA_R = vga_DA ? video[23:23-VGA_BITS+1] : {VGA_BITS{1'b0}};
+  assign VGA_G = vga_DA ? video[15:15-VGA_BITS+1] : {VGA_BITS{1'b0}};
+  assign VGA_B = vga_DA ? video[07:07-VGA_BITS+1] : {VGA_BITS{1'b0}};
   
   assign VGA_BLANK_N = 1'b1;
   assign VGA_SYNC_N  = 1'b0;
