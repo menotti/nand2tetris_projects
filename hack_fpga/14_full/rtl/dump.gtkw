@@ -1,0 +1,41 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Sat Nov 16 03:17:13 2024
+[*]
+[dumpfile] "/home/menotti/Workspace/nand2tetris_projects/hack_fpga/14_full/rtl/dump.vcd"
+[dumpfile_mtime] "Sat Nov 16 03:14:15 2024"
+[dumpfile_size] 12348
+[savefile] "/home/menotti/Workspace/nand2tetris_projects/hack_fpga/14_full/rtl/dump.gtkw"
+[timestart] 0
+[size] 1920 1004
+[pos] -51 -51
+*-6.127700 119 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top_tb.
+[sst_width] 269
+[signals_width] 190
+[sst_expanded] 1
+[sst_vpaned_height] 297
+@28
+top_tb.dut.CLOCK_50
+@29
+top_tb.dut.reset
+@420
+top_tb.dut.IO_LEDS_bit
+top_tb.dut.IO_SW_bit
+@22
+top_tb.dut.IO_rdata[15:0]
+top_tb.dut.LEDR[9:0]
+top_tb.dut.SW[3:0]
+top_tb.dut.addressM[15:0]
+top_tb.dut.from_mem_or_io[15:0]
+top_tb.dut.inM[15:0]
+@28
+top_tb.dut.isIO
+top_tb.dut.isRAM
+top_tb.dut.loadM
+@22
+top_tb.dut.outM[15:0]
+top_tb.dut.pc[15:0]
+top_tb.dut.instruction[15:0]
+[pattern_trace] 1
+[pattern_trace] 0

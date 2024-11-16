@@ -5,9 +5,13 @@ module top_tb();
     reg clk = 1;
     wire [9:0] leds;
     initial begin
-        $monitor("leds=%b d=%h isIO=%b", leds, dut.CPU_0.regD, dut.isIO);
-        forever #5 clk = ~clk;
+        $dumpfile("dump.vcd");
+        $dumpvars(0, top_tb);
+        #500 $finish;
     end
+    always
+        #5 clk = ~clk;
+    
     top dut(
 	    .CLOCK_50(clk),
 	    .LEDR(leds));

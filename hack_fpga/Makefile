@@ -83,6 +83,9 @@ sim:
 	iverilog -DBENCH -g2012 -o test.out *.v
 	vvp test.out
 
+view:
+	gtkwave dump.vcd dump.gtkw & 
+
 ###################################################################
 # Executable Configuration
 #
