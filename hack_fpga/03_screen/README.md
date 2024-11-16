@@ -1,6 +1,10 @@
 # Teste de vídeo
 
-Neste teste colocamos apenas uma figura na parte inferior, deixando espaço para inserir posteriormente a tela de 512x256 usada pelo computador Hack. 
+Neste teste colocamos apenas uma figura na parte inferior, deixando espaço para inserir posteriormente a tela de 512x256 usada pelo computador Hack. Para testar na placa:
+
+    make -f ../Makefile clean all program
+
+Relatório de recursos:
 
     Fitter Status : Successful - Fri Nov 15 23:25:00 2024
     Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition

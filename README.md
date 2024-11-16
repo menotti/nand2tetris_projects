@@ -1,8 +1,8 @@
 # Nand2Tetris4FPGA
 
-Documentação para rodar o projeto Nand to Tetris em FPGAs da Altera
+Documentação para rodar o projeto [Nand to Tetris em FPGAs](hack_fpga) da Altera
 
- ![Nand 2 Tetris 4 FPGAs](../assets/img/Nand2Tetris4FPGA.png)
+ ![Nand 2 Tetris 4 FPGAs](assets/img/Nand2Tetris4FPGA.png)
 
 ## Acesso ao ambiente remoto
 

@@ -1,6 +1,15 @@
 # Blink (binary count)
 
-Neste teste acessamos os leds da placa por meio de I/O mapeados em memória. As memórias de instruções e dados foram modificadas (síncronas) em relação ao projeto original (assíncronas) para poder usar block RAMs do dispositivo Cyclone V. 
+Neste teste acessamos os leds da placa por meio de I/O mapeados em memória. As memórias de instruções e dados foram modificadas (síncronas) em relação ao projeto original (assíncronas) para poder usar block RAMs do dispositivo Cyclone V. Para simular:
+
+    cd rtl 
+    make -f ../../Makefile clean sim view
+
+Para testar na placa:
+
+    make -f ../Makefile clean all program
+
+Relatório de recursos:
 
     Fitter Status : Successful - Sat Nov 16 14:33:43 2024
     Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
