@@ -1,17 +1,21 @@
 @0
 (LOOP)
-@10
+@100
 D=A
 @0
 M=D
 (WAIT2)
 D=0
+(WAIT)
+@WAIT
+D=D+1
+D;JNE
 @0
 MD=M-1
 @WAIT2
 D;JNE
 
-@8192		//write LED
+@8193		//write LED
 M=M+1
 
 @LOOP

@@ -23,7 +23,7 @@ module top(
     wire loadM;
     wire [15:0] outM;
     CPU CPU_0(                        
-        .clk(CLOCK_50),
+        .clk(~CLOCK_50),
         .inM(from_mem_or_io),       // M value input  (M = contents of RAM[A])
         .instruction(instruction),  // Instruction for execution
         .reset(reset),              // Signals whether to re-start the current
@@ -48,7 +48,7 @@ module top(
         .address(addressM),
         .dataR(inM),
         .dataW(outM),
-        .load(loadM & isRAM)
+        .load(loadM && isRAM)
     );
 
     // Memory-mapped IO in IO page, 1-hot addressing   
@@ -58,10 +58,12 @@ module top(
     wire isIO  = addressM[13];
     wire isRAM = !isIO;
     
-    wire [15:0] IO_rdata = {6'b000000, SW};
+    wire [15:0] IO_rdata = addressM[IO_LEDS_bit] ?            LEDR : 
+                           addressM[IO_SW_bit]   ? {6'b000000, SW} :
+                                                              16'bz;
     wire [15:0] from_mem_or_io = isRAM ? inM : IO_rdata;
 
     always@(posedge CLOCK_50)
-        if (isIO & addressM[IO_LEDS_bit]) 
+        if (loadM && isIO && addressM[IO_LEDS_bit]) 
             LEDR <= outM;
 endmodule
