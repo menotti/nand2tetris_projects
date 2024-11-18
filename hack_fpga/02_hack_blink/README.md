@@ -1,6 +1,8 @@
 # Blink (binary count)
 
-Neste teste acessamos os leds da placa por meio de I/O mapeados em memória. As memórias de instruções e dados foram modificadas (síncronas) em relação ao projeto original (assíncronas) para poder usar block RAMs do dispositivo Cyclone V. Para simular:
+>Neste teste acessamos os LEDs da placa por meio de I/O mapeados em memória. As memórias de instruções e dados foram modificadas (síncronas) em relação ao projeto original (assíncronas) para poder usar block RAMs do dispositivo *Cyclone V*. 
+
+Para simular:
 
     cd rtl 
     make -f ../../Makefile clean sim view

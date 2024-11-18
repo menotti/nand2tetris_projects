@@ -1,6 +1,8 @@
 # Teste de vídeo
 
-Neste teste colocamos apenas uma figura na parte inferior, deixando espaço para inserir posteriormente a tela de 512x256 usada pelo computador Hack. Para testar na placa:
+>Neste teste colocamos apenas uma figura na parte inferior da tela, deixando espaço para inserir posteriormente a tela de 512x256 usada pelo computador **Hack**. 
+
+Para testar na placa:
 
     make -f ../Makefile clean all program
 

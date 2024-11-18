@@ -1,6 +1,8 @@
 # Contador Johnson
 
-Este exemplo implementa um contador Johnson em **hardware** apenas para testar o Makefile. Ele não tem relação com o computador Hack. Para testar na placa:
+>Este exemplo implementa um contador Johnson em **hardware** apenas para testar o `Makefile`. Ele não tem relação com o computador Hack. 
+
+Para testar na placa:
 
     make -f ../Makefile clean all program
 

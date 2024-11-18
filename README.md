@@ -18,6 +18,8 @@ Digite `ssh vlab` para acessar o terminal remoto ou use o extensão [Remote - SS
 
 ## Memória RAM e I/O mapeado em memória
 
+> Estas são as características do projeto original. A versão FPGA pode variar de acordo com a disponibilidade de recursos de hardware (e.g. memória) e periféricos da placa usada. 
+
 A memória RAM do sistema é composta pelas seguintes partes, todas elas com 16 bits cada:
 
     0x0000-0x3FFF: RAM       (16K words = 32KB)
