@@ -3,6 +3,11 @@ module RAM8(input clk, load,
 	    input [2:0] address, 
 	    output [15:0] out);
     
+    // reg [15:0] ram [7:0];
+    // always@(negedge clk)
+    //     if (load)
+    //         ram[address] <= in;
+    // assign out = ram[address];
     wire [15:0] r1_o, r2_o, r3_o, r4_o, r5_o, r6_o, r7_o, r8_o; 
     wire load1, load2, load3, load4, load5, load6, load7, load8;
 
@@ -20,3 +25,5 @@ module RAM8(input clk, load,
     Mux8Way16 mx (r1_o, r2_o, r3_o, r4_o, r5_o, r6_o, r7_o, r8_o, address, out);
 
 endmodule
+
+
