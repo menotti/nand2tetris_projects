@@ -15,7 +15,7 @@ MD=M-1
 @WAIT2
 D;JNE
 
-@8193		//write LED
+@8204		//write both LED and HEX display
 M=M+1
 
 @LOOP

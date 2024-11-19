@@ -32,4 +32,4 @@ O computador possui uma memória ROM de 32K words (64KB) para armazenar os progr
 
 Para converter uma imagem em um formato mais simples de ser interpretado, vamos usar o comando `convert` do pacote [ImageMagick®](https://imagemagick.org/index.php). 
 
-    % convert Nand2Tetris.png -compress none  Nand2Tetris.ppm
+    % convert Nand2Tetris.avif -background "rgb(245,245,220)" -flatten -compress none  Nand2Tetris.ppm 

@@ -1,23 +1,3 @@
-/*
- * The module mem provides access to memory RAM 
- * and memory mapped IO
- * In our Minimal-Hack-Project we will use 4Kx16 Bit RAM
- * 
- * address | memory
- * ----------------
- * 0-4047  | RAM
- * 8192    | but
- * 8193    | led
- *
- * WRITE:
- * When load is set to 1, 16 bit dataW are stored to Memory address
- * at next clock cycle. M[address] <= dataW
- * READ:
- * dataR provides data stored in Memory at address.
- * dataR = M[address]
- *
- */
-
 module Memory(
     input  wire clk,
     input  wire [15:0] address,
