@@ -14,7 +14,7 @@ module ROM(
 );
 
     initial 
-        $readmemb("blinky.hack", regROM);
+        $readmemb("Fill.hack", regROM);
     
     reg [15:0] regROM [0:1023];
 
