@@ -62,7 +62,7 @@ module top #(parameter VGA_BITS = 8) (
     vga #(VGA_BITS) vs(VGA_CLK, VGA_HS, VGA_VS, vga_DA, CounterX, CounterY);
 
     assign background = 24'hF5F5DC; // Beige
-    assign logo_addr = (CounterX-112) + (CounterY-316) * 415;
+    assign logo_addr = (CounterX-112) + (CounterY-316) * 415 + 1;
     Nand2Tetris n2t(VGA_CLK, logo_addr, logo_data);
     assign overlay =    CounterX <     112   ? background : 
                         CounterX > 415+112   ? background : 
@@ -95,7 +95,7 @@ module top #(parameter VGA_BITS = 8) (
     localparam IO_HEX30_bit = 3;  // RW four (3-0) seven-segment display
     localparam IO_HEX54_bit = 4;  // RW two (5-4) seven-segment display
 
-    wire isIO  = addressM[15];
+    wire isIO  = addressM[13];
     wire isRAM = !isIO;
     
     wire [15:0] IO_rdata =  addressM[IO_KBD_bit]   ? 16'b0 :

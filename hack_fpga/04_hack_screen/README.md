@@ -1,6 +1,13 @@
 # Computador Hack com Vídeo
 
-Neste exemplo juntamos os dois anteiores para formar o sistemas quase completo. Ainda não nos preocupamos com um código para testar a tela. 
+Neste exemplo juntamos os dois anteiores para formar o sistemas quase completo. Ainda não nos preocupamos com um código para testar a tela.
+
+A memória ROM tem apenas 1K words (2KB) e a RAM 32K words (64KB), distribuidos da seguinte forma:
+
+    0x0000-0x3FFF: RAM   (16K words = 32KB)
+    0x4000-0x5FFF: Screen (8k words = 16KB)
+    0x6000-0x7FFF: Unused (8k words = 16KB)
+    0x8000-0x800F: Memory Mapped I/O
 
 Relatório de recursos:
 
