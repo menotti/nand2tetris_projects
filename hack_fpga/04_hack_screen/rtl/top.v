@@ -4,7 +4,7 @@ module top #(parameter VGA_BITS = 8) (
     input [3:0] SW,
     output [VGA_BITS-1:0] VGA_R, VGA_G, VGA_B,
     output VGA_HS, VGA_VS,
-    output reg VGA_CLK, 
+    output reg VGA_CLK = 0, 
     output VGA_BLANK_N, VGA_SYNC_N,
     output [6:0] HEX5, HEX4, HEX3, HEX2, HEX1, HEX0,
     output reg [9:0] LEDR = 0);
@@ -71,10 +71,13 @@ module top #(parameter VGA_BITS = 8) (
                         logo_data;
 
     assign hack_pos = (CounterX-64) + (CounterY-40) * 512;
-    assign hack_vaddr =   16384 + hack_pos>>4;
+    assign hack_vaddr =   16384 + (hack_pos>>4);
     assign hack_pixel = hack_data[hack_pos[3:0]];
     assign hackscreen = {24{hack_pixel}};
 
+    // initial
+    //     $monitor("CounterX=%d, CounterY=%d, hack_pos=%d, hack_vaddr=%h, hack_pixel=%d", 
+    //         CounterX, CounterY, hack_pos, hack_vaddr, hack_pixel);
     assign  video = CounterX <     64 ? overlay :
                     CounterX > 512+64 ? overlay :
                     CounterY <     40 ? overlay :

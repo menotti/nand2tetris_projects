@@ -15,8 +15,11 @@ module Memory(
     `ifdef BENCH
     integer i;
     initial 
+    begin
+        $monitor("RAM[%h]=%h", vaddr, vdata);
         for(i=0; i<32767; i++) 
             RAM[i] = 0;
+    end
     `endif
 
     always @(posedge clk)

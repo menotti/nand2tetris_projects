@@ -5,7 +5,7 @@ module vga #(
 ) (
   input clk,
   output reg vga_HS, vga_VS, vga_DA,
-  output reg [9:0] CounterX, CounterY);
+  output reg [9:0] CounterX = 0, CounterY = 0);
 
   wire CounterXmaxed = (CounterX == (WIDTH + HFRONT + HSYNC + HBACK));
   wire CounterYmaxed = (CounterY == (HEIGHT + VFRONT + VSYNC + VBACK));

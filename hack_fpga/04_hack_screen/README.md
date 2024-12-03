@@ -1,6 +1,6 @@
 # Computador Hack com Vídeo
 
-Neste exemplo juntamos os dois anteiores para formar o sistemas quase completo. Ainda não nos preocupamos com um código para testar a tela.
+Neste exemplo juntamos os dois anteiores para formar o sistemas completo. Ainda rodamos um código muito simples, apenas para testar a tela.
 
 A memória ROM tem apenas 1K words (2KB) e a RAM 32K words (64KB), distribuidos da seguinte forma:
 
@@ -11,15 +11,15 @@ A memória ROM tem apenas 1K words (2KB) e a RAM 32K words (64KB), distribuidos 
 
 Relatório de recursos:
 
-    Fitter Status : Successful - Tue Nov 19 16:34:56 2024
+    Fitter Status : Successful - Tue Dec  3 15:05:46 2024
     Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
     Revision Name : proj
     Top-level Entity Name : top
     Family : Cyclone V
     Device : 5CSXFC6D6F31C6
     Timing Models : Final
-    Logic utilization (in ALMs) : 262 / 41,910 ( < 1 % )
-    Total registers : 112
+    Logic utilization (in ALMs) : 258 / 41,910 ( < 1 % )
+    Total registers : 114
     Total pins : 86 / 499 ( 17 % )
     Total virtual pins : 0
     Total block memory bits : 2,105,984 / 5,662,720 ( 37 % )
